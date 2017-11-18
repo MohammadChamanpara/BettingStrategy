@@ -8,6 +8,6 @@ namespace Casino.Core
 {
     public interface IStrategy
     {
-		int NextBet(Outcome lastOutcome, int lastBet, int currentProfit);
+		int NextBet(Outcome lastOutcome, int lastBet,int minimumBet, int currentProfit);
     }
 }
