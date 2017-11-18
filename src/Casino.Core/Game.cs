@@ -20,7 +20,13 @@ namespace Casino.Core
 
 			List<int> profitHistory = new List<int>();
 
-			if (spins.Count == 0)
+			if (
+				spins.Count == 0 ||
+				minimumBet <= 0 ||
+				bankroll < minimumBet ||
+				strategy == null ||
+				spins == null
+				)
 				return profitHistory;
 
 			int currentProfit = 0;
@@ -31,9 +37,12 @@ namespace Casino.Core
 
 			for (int i = 1; i < spins.Count; i++)
 			{
-				strategy.NextBet(spins[i],)
-			}
+				if (bankroll - currentProfit <= 0)
+					return profitHistory;
 
+				bet = strategy.NextBet(spins[i], bet, minimumBet, currentProfit);
+
+			}
 			return profitHistory;
 		}
 	}
