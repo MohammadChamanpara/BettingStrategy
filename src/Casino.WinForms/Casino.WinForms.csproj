@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A97FED4E-D695-4857-A4F2-8186CF1F4D23}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BettingStrategy</RootNamespace>
-    <AssemblyName>BettingStrategy</AssemblyName>
+    <RootNamespace>Casino.WinForms</RootNamespace>
+    <AssemblyName>Casino.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,6 +61,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

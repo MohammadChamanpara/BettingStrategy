@@ -1,4 +1,4 @@
-﻿namespace BettingStrategy
+﻿namespace Casino.WinForms
 {
 	partial class Form1
 	{

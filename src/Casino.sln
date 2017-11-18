@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BettingStrategy.WinForms", "BettingStrategy.WinForms\BettingStrategy.WinForms.csproj", "{A97FED4E-D695-4857-A4F2-8186CF1F4D23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.WinForms", "Casino.WinForms\Casino.WinForms.csproj", "{A97FED4E-D695-4857-A4F2-8186CF1F4D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BettingStrategy.Core", "BettingStrategy.Core\BettingStrategy.Core.csproj", "{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.Core", "Casino.Core\Casino.Core.csproj", "{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.Strategies.OscarsGrind", "Casino.Strategies.OscarsGrind\Casino.Strategies.OscarsGrind.csproj", "{B8E31A43-DD91-42C1-A482-5EF7B1159F61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E31A43-DD91-42C1-A482-5EF7B1159F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E31A43-DD91-42C1-A482-5EF7B1159F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E31A43-DD91-42C1-A482-5EF7B1159F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E31A43-DD91-42C1-A482-5EF7B1159F61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

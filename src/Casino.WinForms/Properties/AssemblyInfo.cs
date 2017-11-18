@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BettingStrategy.Core")]
+[assembly: AssemblyTitle("Casino.WinForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BettingStrategy.Core")]
+[assembly: AssemblyProduct("Casino.WinForms")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b7108c99-95c6-4933-ba73-94bff3cfe7a7")]
+[assembly: Guid("a97fed4e-d695-4857-a4f2-8186cf1f4d23")]
 
 // Version information for an assembly consists of the following four values:
 //

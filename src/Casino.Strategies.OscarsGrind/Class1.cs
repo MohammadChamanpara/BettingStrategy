@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BettingStrategy.Core
+namespace Casino.Strategies.OscarsGrind
 {
-	public enum Outcome { Win, Lose }
+    public class Class1
+    {
+    }
 }
