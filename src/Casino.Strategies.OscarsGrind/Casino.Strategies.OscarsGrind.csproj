@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OscarsGrindStrategy.cs" />
+    <Compile Include="OscarsGrindMinHalf.cs" />
+    <Compile Include="OscarsGrindMin.cs" />
+    <Compile Include="OscarsGrind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

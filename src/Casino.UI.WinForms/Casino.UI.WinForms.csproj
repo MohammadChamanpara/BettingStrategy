@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Casino.Core\Casino.Core.csproj">
+      <Project>{B7108C99-95C6-4933-BA73-94BFF3CFE7A7}</Project>
+      <Name>Casino.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Casino.Strategies.OscarsGrind\Casino.Strategies.OscarsGrind.csproj">
+      <Project>{B8E31A43-DD91-42C1-A482-5EF7B1159F61}</Project>
+      <Name>Casino.Strategies.OscarsGrind</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

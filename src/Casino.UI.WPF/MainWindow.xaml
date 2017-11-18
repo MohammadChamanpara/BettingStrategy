@@ -8,9 +8,8 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel Orientation="Vertical">
-        <GroupBox Header="GenerateSpins">
-            <ListBox
-        </GroupBox>
+            <GroupBox Header="GenerateSpins">
+            </GroupBox>
         </StackPanel>
     </Grid>
 </Window>
