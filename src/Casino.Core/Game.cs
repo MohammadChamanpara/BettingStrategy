@@ -8,6 +8,11 @@ namespace Casino.Core
 {
 	public class Game
 	{
+		public List<int> Run(int bankroll, int minimumBet, IStrategy strategy, int spinCount, double winProbability)
+		{
+			var spins = new SpinGenerator().Generate(spinCount, winProbability);
+			return this.Run(bankroll, minimumBet, strategy, spins);
+		}
 		/// <summary>
 		/// Runs the game.
 		/// </summary>
@@ -15,7 +20,7 @@ namespace Casino.Core
 		/// <param name="spins">The sample set of spins.</param>
 		/// <param name="IStrategy">The strategy.</param>
 		/// <returns>The history of profit during the game</returns>
-		List<int> Run(int bankroll, int minimumBet, List<Outcome> spins, IStrategy strategy)
+		public List<int> Run(int bankroll, int minimumBet, IStrategy strategy, List<Outcome> spins)
 		{
 
 			List<int> profitHistory = new List<int>();
