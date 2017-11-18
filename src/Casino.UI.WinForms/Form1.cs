@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Casino.WinForms
+namespace Casino.UI.WinForms
 {
 	public partial class Form1 : Form
 	{
@@ -16,5 +16,6 @@ namespace Casino.WinForms
 		{
 			InitializeComponent();
 		}
+
 	}
 }
