@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Strategies.OscarsGrind
 {
-	public class OscarsGrind : IStrategy
+	public class OscarsGrindHybrid : IStrategy
 	{
 		public List<GameHistoryItem> Run(int bankroll, int minimumBet, List<Outcome> spins)
 		{
@@ -45,6 +45,8 @@ namespace Casino.Strategies.OscarsGrind
 					if (sessionProfit + betSize > minimumBet)
 						betSize = minimumBet - sessionProfit;
 				}
+				else
+					betSize = Math.Max(betSize - minimumBet, minimumBet);
 
 				if (betSize > bankroll)
 					return gameHistory;

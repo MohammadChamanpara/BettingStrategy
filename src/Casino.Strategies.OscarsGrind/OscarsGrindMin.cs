@@ -36,7 +36,7 @@ namespace Casino.Strategies.OscarsGrind
 				if (sessionProfit > 0)
 					sessionProfit = 0;
 
-				gameHistory.Add(new GameHistoryItem(betSize, spins[i], bankroll, bankroll - initialBankroll, sessionProfit));
+				gameHistory.Add(new GameHistoryItem(betSize, spins[i], bankroll, bankroll - initialBankroll));
 
 				if (spins[i] == Outcome.Win)
 				{

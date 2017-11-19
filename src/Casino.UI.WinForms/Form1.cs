@@ -21,34 +21,46 @@ namespace Casino.UI.WinForms
 
 		private void RunButton_Click(object sender, EventArgs e)
 		{
-			var spins = new SpinGenerator().Generate(int.Parse(spinsCountTextBox.Text), (double)OddsUpDown.Value);
+			List<IStrategy> strategies = new List<IStrategy>
+			{
+				new OscarsGrind(),
+				new OscarsGrindMin(),
+				new OscarsGrindHalf(),
+				new OscarsGrindDP(),
+				new OscarsGrindDPM(),
+				new OscarsGrindFB(),
+				new MartinGale(),
+			};
 
+			int spinsCount = int.Parse(spinsCountTextBox.Text);
 			int bankroll = (int)bankRollUpDown.Value;
 			int minBet = (int)minBetUpDown.Value;
+			double odds = (double)OddsUpDown.Value;
+			int repetition = (int)repetitionUpDown.Value;
 
-			var gameHistory = new OscarsGrind().Run(bankroll, minBet, spins);
-			ShowResultsOG(gameHistory, spins, historyListView, playCountTextBox, winLoseTextBox, maxProfitTextBox, minProfitTextBox);
+			dataGridView.Rows.Clear();
 
-			gameHistory = new OscarsGrindMin().Run(bankroll, minBet, spins);
-			ShowResultsOG(gameHistory, spins, historyListViewMin, playCountTextBoxMin, winLoseTextBoxMin, maxProfitTextBoxMin, minProfitTextBoxMin);
-
-			gameHistory = new OscarsGrindHalf().Run(bankroll, minBet, spins);
-			ShowResultsOG(gameHistory, spins, historyListViewHalf, playCountTextBoxHalf, winLoseTextBoxHalf, maxProfitTextBoxHalf, minProfitTextBoxHalf);
-
+			foreach (var strategy in strategies)
+			{
+				int count = 0;
+				int profit = 0;
+				for (int j = 0; j < repetition; j++)
+				{
+					var spins = new SpinGenerator().Generate(spinsCount, odds);
+					var gameHistory = strategy.Run(bankroll, minBet, spins);
+					count += gameHistory.Count();
+					profit += gameHistory.Max(x => x.Profit);
+					if (j == 0) ShowSpins(spins.Take(count).ToList());
+				}
+				dataGridView.Rows.Add(strategy.GetType().Name, count / repetition, profit / repetition);
+			}
 		}
-		void ShowResultsOG(List<GameHistoryItem> gameHistory, List<Outcome> spins, ListView listView, TextBox playCountTextBox, TextBox winLoseTextBox, TextBox maxProfitTextBox, TextBox minProfitTextBox)
+
+		private void ShowSpins(List<Outcome> spins)
 		{
-
-			listView.Clear();
-			foreach (var item in gameHistory)
-				listView.Items.Add(item.ToString());
-
-			int playCount = gameHistory.Count();
-			playCountTextBox.Text = playCount.ToString();
-			int winCount = spins.Take(playCount).Count(x => x == Outcome.Win);
-			winLoseTextBox.Text = $"{winCount}/{playCount - winCount}";
-			maxProfitTextBox.Text = gameHistory.Max(x => x.Profit).ToString();
-			minProfitTextBox.Text = gameHistory.Min(x => x.Profit).ToString();
+			spinsDataGridView.Rows.Clear();
+			foreach (var spin in spins.Skip(spins.Count-20))
+				spinsDataGridView.Rows.Add(spin);
 		}
 	}
 }

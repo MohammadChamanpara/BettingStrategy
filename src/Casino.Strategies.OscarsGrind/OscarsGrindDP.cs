@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Strategies.OscarsGrind
 {
-	public class OscarsGrind : IStrategy
+	public class OscarsGrindDP : IStrategy
 	{
 		public List<GameHistoryItem> Run(int bankroll, int minimumBet, List<Outcome> spins)
 		{
@@ -33,6 +33,9 @@ namespace Casino.Strategies.OscarsGrind
 				sessionProfit += spinProfit;
 				bankroll += spinProfit;
 
+				if (bankroll <= 0)
+					return gameHistory;
+
 				if (sessionProfit > 0)
 					sessionProfit = 0;
 
@@ -45,9 +48,9 @@ namespace Casino.Strategies.OscarsGrind
 					if (sessionProfit + betSize > minimumBet)
 						betSize = minimumBet - sessionProfit;
 				}
+				else
+					betSize = 0;
 
-				if (betSize > bankroll)
-					return gameHistory;
 
 			}
 			return gameHistory;

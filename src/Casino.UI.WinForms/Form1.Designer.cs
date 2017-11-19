@@ -37,39 +37,23 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.minBetUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label3 = new System.Windows.Forms.Label();
-			this.historyListView = new System.Windows.Forms.ListView();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.historyListViewMin = new System.Windows.Forms.ListView();
+			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this.NameC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CountC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ProfitC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.repetitionUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
-			this.winLoseTextBox = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.playCountTextBox = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.minProfitTextBox = new System.Windows.Forms.TextBox();
-			this.maxProfitTextBox = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.winLoseTextBoxMin = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
-			this.playCountTextBoxMin = new System.Windows.Forms.TextBox();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.minProfitTextBoxMin = new System.Windows.Forms.TextBox();
-			this.maxProfitTextBoxMin = new System.Windows.Forms.TextBox();
-			this.label15 = new System.Windows.Forms.Label();
-			this.winLoseTextBoxHalf = new System.Windows.Forms.TextBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.playCountTextBoxHalf = new System.Windows.Forms.TextBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
-			this.minProfitTextBoxHalf = new System.Windows.Forms.TextBox();
-			this.maxProfitTextBoxHalf = new System.Windows.Forms.TextBox();
-			this.label19 = new System.Windows.Forms.Label();
-			this.historyListViewHalf = new System.Windows.Forms.ListView();
+			this.historyDataGridView = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.spinsDataGridView = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.OddsUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bankRollUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minBetUpDown)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.repetitionUpDown)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.historyDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.spinsDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// OddsUpDown
@@ -80,7 +64,7 @@
             0,
             0,
             131072});
-			this.OddsUpDown.Location = new System.Drawing.Point(132, 207);
+			this.OddsUpDown.Location = new System.Drawing.Point(132, 204);
 			this.OddsUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -98,7 +82,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(12, 209);
+			this.label2.Location = new System.Drawing.Point(13, 206);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(114, 17);
 			this.label2.TabIndex = 41;
@@ -107,7 +91,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 81);
+			this.label1.Location = new System.Drawing.Point(39, 80);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(88, 17);
 			this.label1.TabIndex = 40;
@@ -123,7 +107,7 @@
 			// 
 			// RunButton
 			// 
-			this.RunButton.Location = new System.Drawing.Point(15, 281);
+			this.RunButton.Location = new System.Drawing.Point(15, 330);
 			this.RunButton.Name = "RunButton";
 			this.RunButton.Size = new System.Drawing.Size(188, 35);
 			this.RunButton.TabIndex = 30;
@@ -138,7 +122,7 @@
             0,
             0,
             0});
-			this.bankRollUpDown.Location = new System.Drawing.Point(132, 143);
+			this.bankRollUpDown.Location = new System.Drawing.Point(132, 141);
 			this.bankRollUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -156,7 +140,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(12, 145);
+			this.label4.Location = new System.Drawing.Point(64, 143);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(63, 17);
 			this.label4.TabIndex = 28;
@@ -192,306 +176,121 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(12, 17);
+			this.label3.Location = new System.Drawing.Point(68, 17);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(59, 17);
 			this.label3.TabIndex = 26;
 			this.label3.Text = "Min Bet:";
 			// 
-			// historyListView
+			// dataGridView
 			// 
-			this.historyListView.Location = new System.Drawing.Point(260, 35);
-			this.historyListView.Name = "historyListView";
-			this.historyListView.Size = new System.Drawing.Size(212, 467);
-			this.historyListView.TabIndex = 25;
-			this.historyListView.UseCompatibleStateImageBehavior = false;
-			this.historyListView.View = System.Windows.Forms.View.Tile;
+			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameC,
+            this.CountC,
+            this.ProfitC});
+			this.dataGridView.Location = new System.Drawing.Point(308, 15);
+			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.RowTemplate.Height = 24;
+			this.dataGridView.Size = new System.Drawing.Size(455, 352);
+			this.dataGridView.TabIndex = 43;
 			// 
-			// label9
+			// NameC
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(257, 15);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(92, 17);
-			this.label9.TabIndex = 43;
-			this.label9.Text = "Oscars Grind";
+			this.NameC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.NameC.HeaderText = "Name";
+			this.NameC.Name = "NameC";
+			this.NameC.ReadOnly = true;
 			// 
-			// label10
+			// CountC
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(499, 15);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(118, 17);
-			this.label10.TabIndex = 45;
-			this.label10.Text = "Oscars Grind Min";
+			this.CountC.HeaderText = "Count";
+			this.CountC.Name = "CountC";
+			this.CountC.ReadOnly = true;
 			// 
-			// historyListViewMin
+			// ProfitC
 			// 
-			this.historyListViewMin.Location = new System.Drawing.Point(502, 35);
-			this.historyListViewMin.Name = "historyListViewMin";
-			this.historyListViewMin.Size = new System.Drawing.Size(212, 467);
-			this.historyListViewMin.TabIndex = 44;
-			this.historyListViewMin.UseCompatibleStateImageBehavior = false;
-			this.historyListViewMin.View = System.Windows.Forms.View.Tile;
+			this.ProfitC.HeaderText = "Profit";
+			this.ProfitC.Name = "ProfitC";
+			this.ProfitC.ReadOnly = true;
+			// 
+			// repetitionUpDown
+			// 
+			this.repetitionUpDown.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+			this.repetitionUpDown.Location = new System.Drawing.Point(132, 267);
+			this.repetitionUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.repetitionUpDown.Name = "repetitionUpDown";
+			this.repetitionUpDown.Size = new System.Drawing.Size(71, 22);
+			this.repetitionUpDown.TabIndex = 45;
+			this.repetitionUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(257, 519);
+			this.label5.Location = new System.Drawing.Point(51, 269);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(67, 17);
-			this.label5.TabIndex = 47;
-			this.label5.Text = "Win/Lose";
+			this.label5.Size = new System.Drawing.Size(76, 17);
+			this.label5.TabIndex = 44;
+			this.label5.Text = "Repetition:";
 			// 
-			// winLoseTextBox
+			// historyDataGridView
 			// 
-			this.winLoseTextBox.Location = new System.Drawing.Point(337, 516);
-			this.winLoseTextBox.Name = "winLoseTextBox";
-			this.winLoseTextBox.ReadOnly = true;
-			this.winLoseTextBox.Size = new System.Drawing.Size(100, 22);
-			this.winLoseTextBox.TabIndex = 46;
+			this.historyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.historyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
+			this.historyDataGridView.Location = new System.Drawing.Point(1040, 15);
+			this.historyDataGridView.Name = "historyDataGridView";
+			this.historyDataGridView.RowTemplate.Height = 24;
+			this.historyDataGridView.Size = new System.Drawing.Size(265, 352);
+			this.historyDataGridView.TabIndex = 46;
 			// 
-			// label8
+			// dataGridViewTextBoxColumn1
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(275, 600);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(49, 17);
-			this.label8.TabIndex = 53;
-			this.label8.Text = "Count:";
+			this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn1.HeaderText = "History";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// playCountTextBox
+			// spinsDataGridView
 			// 
-			this.playCountTextBox.Location = new System.Drawing.Point(337, 597);
-			this.playCountTextBox.Name = "playCountTextBox";
-			this.playCountTextBox.ReadOnly = true;
-			this.playCountTextBox.Size = new System.Drawing.Size(100, 22);
-			this.playCountTextBox.TabIndex = 52;
+			this.spinsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.spinsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+			this.spinsDataGridView.Location = new System.Drawing.Point(769, 15);
+			this.spinsDataGridView.Name = "spinsDataGridView";
+			this.spinsDataGridView.RowTemplate.Height = 24;
+			this.spinsDataGridView.Size = new System.Drawing.Size(265, 352);
+			this.spinsDataGridView.TabIndex = 47;
 			// 
-			// label7
+			// dataGridViewTextBoxColumn2
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(257, 572);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(71, 17);
-			this.label7.TabIndex = 51;
-			this.label7.Text = "Min Profit:";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(257, 547);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(74, 17);
-			this.label6.TabIndex = 50;
-			this.label6.Text = "Max Profit:";
-			// 
-			// minProfitTextBox
-			// 
-			this.minProfitTextBox.Location = new System.Drawing.Point(337, 569);
-			this.minProfitTextBox.Name = "minProfitTextBox";
-			this.minProfitTextBox.ReadOnly = true;
-			this.minProfitTextBox.Size = new System.Drawing.Size(100, 22);
-			this.minProfitTextBox.TabIndex = 49;
-			// 
-			// maxProfitTextBox
-			// 
-			this.maxProfitTextBox.Location = new System.Drawing.Point(337, 544);
-			this.maxProfitTextBox.Name = "maxProfitTextBox";
-			this.maxProfitTextBox.ReadOnly = true;
-			this.maxProfitTextBox.Size = new System.Drawing.Size(100, 22);
-			this.maxProfitTextBox.TabIndex = 48;
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Cursor = System.Windows.Forms.Cursors.Arrow;
-			this.label11.Location = new System.Drawing.Point(502, 519);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(67, 17);
-			this.label11.TabIndex = 55;
-			this.label11.Text = "Win/Lose";
-			// 
-			// winLoseTextBoxMin
-			// 
-			this.winLoseTextBoxMin.Location = new System.Drawing.Point(582, 516);
-			this.winLoseTextBoxMin.Name = "winLoseTextBoxMin";
-			this.winLoseTextBoxMin.ReadOnly = true;
-			this.winLoseTextBoxMin.Size = new System.Drawing.Size(100, 22);
-			this.winLoseTextBoxMin.TabIndex = 54;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(520, 600);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(49, 17);
-			this.label12.TabIndex = 61;
-			this.label12.Text = "Count:";
-			// 
-			// playCountTextBoxMin
-			// 
-			this.playCountTextBoxMin.Location = new System.Drawing.Point(582, 597);
-			this.playCountTextBoxMin.Name = "playCountTextBoxMin";
-			this.playCountTextBoxMin.ReadOnly = true;
-			this.playCountTextBoxMin.Size = new System.Drawing.Size(100, 22);
-			this.playCountTextBoxMin.TabIndex = 60;
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(502, 572);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(71, 17);
-			this.label13.TabIndex = 59;
-			this.label13.Text = "Min Profit:";
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(502, 547);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(74, 17);
-			this.label14.TabIndex = 58;
-			this.label14.Text = "Max Profit:";
-			// 
-			// minProfitTextBoxMin
-			// 
-			this.minProfitTextBoxMin.Location = new System.Drawing.Point(582, 569);
-			this.minProfitTextBoxMin.Name = "minProfitTextBoxMin";
-			this.minProfitTextBoxMin.ReadOnly = true;
-			this.minProfitTextBoxMin.Size = new System.Drawing.Size(100, 22);
-			this.minProfitTextBoxMin.TabIndex = 57;
-			// 
-			// maxProfitTextBoxMin
-			// 
-			this.maxProfitTextBoxMin.Location = new System.Drawing.Point(582, 544);
-			this.maxProfitTextBoxMin.Name = "maxProfitTextBoxMin";
-			this.maxProfitTextBoxMin.ReadOnly = true;
-			this.maxProfitTextBoxMin.Size = new System.Drawing.Size(100, 22);
-			this.maxProfitTextBoxMin.TabIndex = 56;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Cursor = System.Windows.Forms.Cursors.Arrow;
-			this.label15.Location = new System.Drawing.Point(742, 519);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(67, 17);
-			this.label15.TabIndex = 65;
-			this.label15.Text = "Win/Lose";
-			// 
-			// winLoseTextBoxHalf
-			// 
-			this.winLoseTextBoxHalf.Location = new System.Drawing.Point(822, 516);
-			this.winLoseTextBoxHalf.Name = "winLoseTextBoxHalf";
-			this.winLoseTextBoxHalf.ReadOnly = true;
-			this.winLoseTextBoxHalf.Size = new System.Drawing.Size(100, 22);
-			this.winLoseTextBoxHalf.TabIndex = 64;
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(760, 600);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(49, 17);
-			this.label16.TabIndex = 71;
-			this.label16.Text = "Count:";
-			// 
-			// playCountTextBoxHalf
-			// 
-			this.playCountTextBoxHalf.Location = new System.Drawing.Point(822, 597);
-			this.playCountTextBoxHalf.Name = "playCountTextBoxHalf";
-			this.playCountTextBoxHalf.ReadOnly = true;
-			this.playCountTextBoxHalf.Size = new System.Drawing.Size(100, 22);
-			this.playCountTextBoxHalf.TabIndex = 70;
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(742, 572);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(71, 17);
-			this.label17.TabIndex = 69;
-			this.label17.Text = "Min Profit:";
-			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.Location = new System.Drawing.Point(742, 547);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(74, 17);
-			this.label18.TabIndex = 68;
-			this.label18.Text = "Max Profit:";
-			// 
-			// minProfitTextBoxHalf
-			// 
-			this.minProfitTextBoxHalf.Location = new System.Drawing.Point(822, 569);
-			this.minProfitTextBoxHalf.Name = "minProfitTextBoxHalf";
-			this.minProfitTextBoxHalf.ReadOnly = true;
-			this.minProfitTextBoxHalf.Size = new System.Drawing.Size(100, 22);
-			this.minProfitTextBoxHalf.TabIndex = 67;
-			// 
-			// maxProfitTextBoxHalf
-			// 
-			this.maxProfitTextBoxHalf.Location = new System.Drawing.Point(822, 544);
-			this.maxProfitTextBoxHalf.Name = "maxProfitTextBoxHalf";
-			this.maxProfitTextBoxHalf.ReadOnly = true;
-			this.maxProfitTextBoxHalf.Size = new System.Drawing.Size(100, 22);
-			this.maxProfitTextBoxHalf.TabIndex = 66;
-			// 
-			// label19
-			// 
-			this.label19.AutoSize = true;
-			this.label19.Location = new System.Drawing.Point(739, 15);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(121, 17);
-			this.label19.TabIndex = 63;
-			this.label19.Text = "Oscars Grind Half";
-			// 
-			// historyListViewHalf
-			// 
-			this.historyListViewHalf.Location = new System.Drawing.Point(742, 35);
-			this.historyListViewHalf.Name = "historyListViewHalf";
-			this.historyListViewHalf.Size = new System.Drawing.Size(212, 467);
-			this.historyListViewHalf.TabIndex = 62;
-			this.historyListViewHalf.UseCompatibleStateImageBehavior = false;
-			this.historyListViewHalf.View = System.Windows.Forms.View.Tile;
+			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn2.HeaderText = "spins";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1291, 727);
-			this.Controls.Add(this.label15);
-			this.Controls.Add(this.winLoseTextBoxHalf);
-			this.Controls.Add(this.label16);
-			this.Controls.Add(this.playCountTextBoxHalf);
-			this.Controls.Add(this.label17);
-			this.Controls.Add(this.label18);
-			this.Controls.Add(this.minProfitTextBoxHalf);
-			this.Controls.Add(this.maxProfitTextBoxHalf);
-			this.Controls.Add(this.label19);
-			this.Controls.Add(this.historyListViewHalf);
-			this.Controls.Add(this.label11);
-			this.Controls.Add(this.winLoseTextBoxMin);
-			this.Controls.Add(this.label12);
-			this.Controls.Add(this.playCountTextBoxMin);
-			this.Controls.Add(this.label13);
-			this.Controls.Add(this.label14);
-			this.Controls.Add(this.minProfitTextBoxMin);
-			this.Controls.Add(this.maxProfitTextBoxMin);
+			this.ClientSize = new System.Drawing.Size(1291, 477);
+			this.Controls.Add(this.spinsDataGridView);
+			this.Controls.Add(this.historyDataGridView);
+			this.Controls.Add(this.repetitionUpDown);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.winLoseTextBox);
-			this.Controls.Add(this.label8);
-			this.Controls.Add(this.playCountTextBox);
-			this.Controls.Add(this.label7);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.minProfitTextBox);
-			this.Controls.Add(this.maxProfitTextBox);
-			this.Controls.Add(this.label10);
-			this.Controls.Add(this.historyListViewMin);
-			this.Controls.Add(this.label9);
+			this.Controls.Add(this.dataGridView);
 			this.Controls.Add(this.OddsUpDown);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -501,12 +300,15 @@
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.minBetUpDown);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.historyListView);
 			this.Name = "Form1";
 			this.Text = "Casino";
 			((System.ComponentModel.ISupportInitialize)(this.OddsUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bankRollUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.minBetUpDown)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.repetitionUpDown)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.historyDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.spinsDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -523,36 +325,16 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.NumericUpDown minBetUpDown;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.ListView historyListView;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.ListView historyListViewMin;
+		private System.Windows.Forms.DataGridView dataGridView;
+		private System.Windows.Forms.NumericUpDown repetitionUpDown;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox winLoseTextBox;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TextBox playCountTextBox;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox minProfitTextBox;
-		private System.Windows.Forms.TextBox maxProfitTextBox;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TextBox winLoseTextBoxMin;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.TextBox playCountTextBoxMin;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TextBox minProfitTextBoxMin;
-		private System.Windows.Forms.TextBox maxProfitTextBoxMin;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TextBox winLoseTextBoxHalf;
-		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.TextBox playCountTextBoxHalf;
-		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.Label label18;
-		private System.Windows.Forms.TextBox minProfitTextBoxHalf;
-		private System.Windows.Forms.TextBox maxProfitTextBoxHalf;
-		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.ListView historyListViewHalf;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NameC;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CountC;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ProfitC;
+		private System.Windows.Forms.DataGridView historyDataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridView spinsDataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 	}
 }
 
