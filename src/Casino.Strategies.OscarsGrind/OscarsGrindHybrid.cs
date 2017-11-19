@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Strategies.OscarsGrind
 {
-	public class OscarsGrindFB : IStrategy
+	public class OscarsGrindHybrid : IStrategy
 	{
 		public List<GameHistoryItem> Run(int bankroll, int minimumBet, List<Outcome> spins)
 		{
@@ -38,21 +38,47 @@ namespace Casino.Strategies.OscarsGrind
 
 				gameHistory.Add(new GameHistoryItem(betSize, spins[i], bankroll, bankroll - initialBankroll));
 
-				if (spins[i] == Outcome.Win)
+				if (TrendIsOn(spins, i))
 				{
-					betSize += minimumBet;
 
-					if (sessionProfit + betSize > minimumBet)
-						betSize = minimumBet - sessionProfit;
+					if (spins[i] == Outcome.Win)
+					{
+						betSize += minimumBet;
+
+						if (sessionProfit + betSize > minimumBet)
+							betSize = minimumBet - sessionProfit;
+					}
+					else
+						betSize = Math.Max(betSize - minimumBet, minimumBet);
 				}
 				else
-					betSize = Math.Max(betSize - minimumBet, minimumBet);
+				{
+					if (spins[i] == Outcome.Win)
+					{
+						betSize = minimumBet;
+					}
+					else
+					{
+						betSize *= 2;
+					}
+				}
 
 				if (betSize > bankroll)
 					return gameHistory;
 
 			}
 			return gameHistory;
+		}
+
+		private bool TrendIsOn(List<Outcome> spins, int i)
+		{
+			if (i < 3)
+				return true;
+
+			if (spins[i] == spins[i - 1] && spins[i] == spins[i - 2])
+				return true;
+
+			return false;
 		}
 	}
 }

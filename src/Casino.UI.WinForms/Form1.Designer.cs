@@ -45,15 +45,12 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.historyDataGridView = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.spinsDataGridView = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.OddsUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bankRollUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minBetUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.repetitionUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.historyDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.spinsDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// OddsUpDown
@@ -192,7 +189,7 @@
 			this.dataGridView.Location = new System.Drawing.Point(308, 15);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.RowTemplate.Height = 24;
-			this.dataGridView.Size = new System.Drawing.Size(455, 352);
+			this.dataGridView.Size = new System.Drawing.Size(455, 439);
 			this.dataGridView.TabIndex = 43;
 			// 
 			// NameC
@@ -250,10 +247,10 @@
 			this.historyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.historyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
-			this.historyDataGridView.Location = new System.Drawing.Point(1040, 15);
+			this.historyDataGridView.Location = new System.Drawing.Point(769, 15);
 			this.historyDataGridView.Name = "historyDataGridView";
 			this.historyDataGridView.RowTemplate.Height = 24;
-			this.historyDataGridView.Size = new System.Drawing.Size(265, 352);
+			this.historyDataGridView.Size = new System.Drawing.Size(265, 439);
 			this.historyDataGridView.TabIndex = 46;
 			// 
 			// dataGridViewTextBoxColumn1
@@ -263,30 +260,11 @@
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// spinsDataGridView
-			// 
-			this.spinsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.spinsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
-			this.spinsDataGridView.Location = new System.Drawing.Point(769, 15);
-			this.spinsDataGridView.Name = "spinsDataGridView";
-			this.spinsDataGridView.RowTemplate.Height = 24;
-			this.spinsDataGridView.Size = new System.Drawing.Size(265, 352);
-			this.spinsDataGridView.TabIndex = 47;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.dataGridViewTextBoxColumn2.HeaderText = "spins";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1291, 477);
-			this.Controls.Add(this.spinsDataGridView);
 			this.Controls.Add(this.historyDataGridView);
 			this.Controls.Add(this.repetitionUpDown);
 			this.Controls.Add(this.label5);
@@ -308,7 +286,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.repetitionUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.historyDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.spinsDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -333,8 +310,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ProfitC;
 		private System.Windows.Forms.DataGridView historyDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridView spinsDataGridView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 	}
 }
 

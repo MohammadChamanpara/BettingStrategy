@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Strategies.OscarsGrind
 {
-	public class MartinGale : IStrategy
+	public class Cancellation : IStrategy
 	{
 		public List<GameHistoryItem> Run(int bankroll, int minimumBet, List<Outcome> spins)
 		{
@@ -21,9 +21,11 @@ namespace Casino.Strategies.OscarsGrind
 				)
 				return gameHistory;
 
+			List<int> target = new List<int> { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
 			int initialBankroll = bankroll;
 
-			int betSize = minimumBet;
+			int betSize = (target.First() + target.Last()) * minimumBet;
 
 			for (int i = 0; i < spins.Count; i++)
 			{
@@ -31,18 +33,24 @@ namespace Casino.Strategies.OscarsGrind
 
 				gameHistory.Add(new GameHistoryItem(betSize, spins[i], bankroll, bankroll - initialBankroll));
 
-				if (spins[i] == Outcome.Win)
-				{
-					betSize = minimumBet;
-				}
-				else
-				{
-					betSize=Math.Min(betSize * 2, bankroll);
-				}
-
 				if (bankroll <= 0)
 					return gameHistory;
 
+				if (spins[i] == Outcome.Win)
+				{
+					target.RemoveAt(0);
+
+					if (target.Count > 0)
+						target.RemoveAt(Math.Min(target.Count - 1, 0));
+
+					if (target.Count == 0)
+						target = new List<int> { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+				}
+				else
+				{
+					target.Add(betSize / minimumBet);
+				}
+				betSize = Math.Min(bankroll, (target.First() + target.Last()) * minimumBet);
 			}
 			return gameHistory;
 		}

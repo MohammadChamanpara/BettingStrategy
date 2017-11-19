@@ -24,12 +24,20 @@ namespace Casino.UI.WinForms
 			List<IStrategy> strategies = new List<IStrategy>
 			{
 				new OscarsGrind(),
+				new OscarsGrindLastBet(),
+				new OscarsGrindGuarantee(),
+				new OscarsGrind1B(),
 				new OscarsGrindMin(),
 				new OscarsGrindHalf(),
 				new OscarsGrindDP(),
 				new OscarsGrindDPM(),
 				new OscarsGrindFB(),
 				new MartinGale(),
+				new MartinGaleReverse(),
+				new OscarsGrindHybrid(),
+				new Cancellation(),
+				new CancellationGuarantee(),
+				new Stearn(),
 			};
 
 			int spinsCount = int.Parse(spinsCountTextBox.Text);
@@ -50,17 +58,16 @@ namespace Casino.UI.WinForms
 					var gameHistory = strategy.Run(bankroll, minBet, spins);
 					count += gameHistory.Count();
 					profit += gameHistory.Max(x => x.Profit);
-					if (j == 0) ShowSpins(spins.Take(count).ToList());
+					if (j == 0) ShowHistory(gameHistory.Take(count).ToList());
 				}
 				dataGridView.Rows.Add(strategy.GetType().Name, count / repetition, profit / repetition);
 			}
 		}
-
-		private void ShowSpins(List<Outcome> spins)
+		private void ShowHistory(List<GameHistoryItem> list)
 		{
-			spinsDataGridView.Rows.Clear();
-			foreach (var spin in spins.Skip(spins.Count-20))
-				spinsDataGridView.Rows.Add(spin);
+			historyDataGridView.Rows.Clear();
+			foreach (var item in list.Skip(list.Count - 30))
+				historyDataGridView.Rows.Add(item);
 		}
 	}
 }

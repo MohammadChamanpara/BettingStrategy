@@ -40,11 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancellationGuarantee.cs" />
+    <Compile Include="Cancellation.cs" />
+    <Compile Include="Stearn.cs" />
     <Compile Include="MartinGale.cs" />
+    <Compile Include="MartinGaleReverse.cs" />
+    <Compile Include="OscarsGrindLastBet.cs" />
+    <Compile Include="OscarsGrindGuarantee.cs" />
+    <Compile Include="OscarsGrind1B.cs" />
     <Compile Include="OscarsGrindDPM.cs" />
     <Compile Include="OscarsGrindDP.cs" />
-    <Compile Include="OscarsGrindHybrid.cs" />
     <Compile Include="OscarsGrindFB.cs" />
+    <Compile Include="OscarsGrindHybrid.cs" />
     <Compile Include="OscarsGrindHalf.cs" />
     <Compile Include="OscarsGrindMin.cs" />
     <Compile Include="OscarsGrind.cs" />

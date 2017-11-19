@@ -12,7 +12,7 @@ namespace Casino.Core
 		{
 			Outcome[] outcomes = new Outcome[count];
 
-			var random = new Random();
+			var random = new Random(DateTime.Now.Second);
 
 			for (int i = 0; i < count; i++)
 			{
